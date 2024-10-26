@@ -1,6 +1,6 @@
 {
-    "name": "vsckeyboard",
-    "short_name": "vsckeyboard",
+    "name": "fkeys",
+    "short_name": "fkeys",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
