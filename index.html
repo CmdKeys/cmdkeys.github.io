@@ -4,11 +4,11 @@
   <base href="/">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Functions Keys App">
+  <meta name="description" content="F-Keys App">
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="personal_profile">
+
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/ico" href="favicon.ico"/>
@@ -33,7 +33,7 @@
   <!-- Flutter initialization -->
   <script src="flutter.js" defer></script>
   <script>
-    const serviceWorkerVersion = ""4102541471"";
+    const serviceWorkerVersion = "1.0.1";
 
     window.addEventListener('load', function(ev) {
       _flutter.loader.load({
@@ -42,18 +42,22 @@
         },
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-
-            // Oculta la animación de carga
             document.getElementById('loadingScreen').style.display = 'none';
+            appRunner.runApp();
+          }).catch(error => {
+            document.getElementById('loadingScreen').style.display = 'none';
+            console.error("Error running the app:", error);
           });
         }
+      }).catch(error => {
+        document.getElementById('loadingScreen').style.display = 'none';
+        console.error("Error loading Flutter:", error);
       });
     });
+
+    
   </script>
   
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
-
-
